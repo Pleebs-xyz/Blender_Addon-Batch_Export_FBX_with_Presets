@@ -1,3 +1,5 @@
+![FBX_addon1](https://github.com/Pleebs-xyz/blender-addon-Batch-Export-FBX-with-Presets./assets/142031831/0c3cf1bc-18de-4f0d-89d5-547decce6af0)
+
 # blender-addon-Batch-Export-FBX-with-Presets.
 
 I recently had to export many foliage-assets, so I made myself a little script to aid me.
@@ -6,6 +8,8 @@ It exports all selected objects as individual .Fbx- files. inheriting the Object
 
 Thought this might be useful for anyone else too, so i created this small and lightweight Addon for it.
 
+
+https://github.com/Pleebs-xyz/blender-addon-Batch-Export-FBX-with-Presets./assets/142031831/f718837a-ddb3-42ff-9538-46260ca0b370
 
 
 # Here's how it works:
