@@ -1,4 +1,4 @@
-## blender-addon-Batch-Export-FBX-with-Presets.
+# blender-addon-Batch-Export-FBX-with-Presets.
 
 I recently had to export many foliage-assets, so I made myself a little script to aid me.
 
@@ -8,7 +8,7 @@ Thought this might be useful for anyone else too, so i created this small and li
 
 
 
-## Here's how it works:
+# Here's how it works:
 
 * Install and activate the add-on, like any other blender Addon. Now it show up in you N-panel under 'FBX Batch'
 * Save your .blend file in the directory you want to Export to. The Script exports the fbx-files to the same Directory the blend is stored in.
@@ -24,7 +24,7 @@ Hope it saves you time too!
 
 
 
-# My Social-media:
+## My Social-media:
 
 https://twitter.com/Pleebs_xyz
 
