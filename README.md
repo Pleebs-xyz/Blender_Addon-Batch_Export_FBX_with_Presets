@@ -1,6 +1,6 @@
 ![FBX_addon1](https://github.com/Pleebs-xyz/blender-addon-Batch-Export-FBX-with-Presets./assets/142031831/0c3cf1bc-18de-4f0d-89d5-547decce6af0)
 
-# blender-addon-Batch-Export-FBX-with-Presets.
+# blender-addon-Batch-Export-FBX-with-Presets
 
 I recently had to export many foliage-assets, so I made myself a little script to aid me.
 
@@ -28,7 +28,7 @@ Hope it saves you time too!
 
 
 
-## My Social-media:
+### My Social-media:
 
 https://twitter.com/Pleebs_xyz
 
