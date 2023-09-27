@@ -1,3 +1,6 @@
+import bpy
+import os
+
 bl_info = {
     "name": "Export Selected Objects as FBX w. Presets",
     "author": "pleebs_xyz",
@@ -8,8 +11,6 @@ bl_info = {
     "category": "Import-Export"
 }
 
-import bpy
-import os
 
 class ExportSelectedObjectsProps(bpy.types.PropertyGroup):
     preset_name: bpy.props.StringProperty(name="Preset Name", description="Specify the preset you saved in File/Export/Fbx dialog window here")
