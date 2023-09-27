@@ -1,3 +1,6 @@
+import bpy
+import os
+
 bl_info = {
     "name": "Export Selected Objects as FBX w. Presets",
     "author": "pleebs_xyz",
@@ -8,8 +11,6 @@ bl_info = {
     "category": "Import-Export"
 }
 
-import bpy
-import os
 
 class ExportSelectedObjectsProps(bpy.types.PropertyGroup):
     preset_name: bpy.props.StringProperty(name="Preset Name", description="Specify the preset you saved in File/Export/Fbx dialog window here")
@@ -77,6 +78,20 @@ class OBJECT_OT_export_selected_objects(bpy.types.Operator):
 
         return {'FINISHED'}
 
+class OBJECT_OT_rename_mesh(bpy.types.Operator):
+    bl_idname = "object.rename_mesh"
+    bl_label = "Rename Mesh to ObjectName's MeshName"
+    bl_description = "Rename MeshName to objectname,for all selected objects ; can be handy in some engines like UE"
+    bl_options = {'REGISTER', 'UNDO'}
+
+    def execute(self, context):
+        selected_objects = context.selected_objects
+
+        for obj in selected_objects:
+            if obj.type == 'MESH':
+                obj.data.name = obj.name
+
+        return {'FINISHED'}
 
 class OBJECT_PT_export_selected_objects_panel(bpy.types.Panel):
     bl_idname = "OBJECT_PT_export_selected_objects_panel"
@@ -91,24 +106,32 @@ class OBJECT_PT_export_selected_objects_panel(bpy.types.Panel):
 
         layout.prop(props, "preset_name")
         layout.prop(props, "move_to_origin")
-        layout.operator("object.export_selected_objects")
-
-
+        
+        row = layout.row()
+        row.scale_y = 2  # Adjust the button width
+        row.operator("object.export_selected_objects", icon='EXPORT', text="Export")
+        
+        layout.separator()
+        
+        row = layout.row()
+        row.scale_y = 0.9 # Adjust the button width
+        row.operator("object.rename_mesh", text="Rename Mesh", icon='MESH_CUBE')
+        
+                
 def register():
     bpy.utils.register_class(ExportSelectedObjectsProps)
     bpy.utils.register_class(OBJECT_OT_export_selected_objects)
+    bpy.utils.register_class(OBJECT_OT_rename_mesh)
     bpy.utils.register_class(OBJECT_PT_export_selected_objects_panel)
     bpy.types.Scene.export_selected_objects_props = bpy.props.PointerProperty(type=ExportSelectedObjectsProps)
-
 
 def unregister():
     bpy.utils.unregister_class(ExportSelectedObjectsProps)
     bpy.utils.unregister_class(OBJECT_OT_export_selected_objects)
+    bpy.utils.unregister_class(OBJECT_OT_rename_mesh)
     bpy.utils.unregister_class(OBJECT_PT_export_selected_objects_panel)
-    del bpy.types.Scene.export_selected_objects_props 
+    del bpy.types.Scene.export_selected_objects_props
+
     
 if __name__ == '__main__':
     register()
-
-
-
